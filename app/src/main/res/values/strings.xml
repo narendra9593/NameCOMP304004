@@ -1,0 +1,6 @@
+<resources>
+    <string name="app_name">NameCOMP-304-004</string>
+    <string name="select_your">Select Your Exercise to Show the Solution</string>
+    <string name="stop_animation">Stop Animation</string>
+    <string name="start_animation">Start Animation</string>
+</resources>
