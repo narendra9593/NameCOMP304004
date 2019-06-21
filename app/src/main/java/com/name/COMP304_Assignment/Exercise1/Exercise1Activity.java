@@ -1,5 +1,7 @@
 package com.name.COMP304_Assignment.Exercise1;
 
+import android.graphics.Color;
+import android.graphics.Paint;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
@@ -91,8 +93,14 @@ public class Exercise1Activity extends AppCompatActivity implements View.OnClick
 
     @Override
     public void onClick(View v) {
+        Paint mPaint=new Paint();
         switch (v.getId()) {
             case R.id.btnRight:
+                mPaint.setColor(Color.parseColor(colorCode));
+                mPaint.setStyle(Paint.Style.STROKE);
+                // Line width in pixels
+                mPaint.setStrokeWidth(Float.parseFloat(lineStroke));
+                customCanvas.drawLineCanvas(mPaint,0,0,10,10);
                 break;
             case R.id.btnLeft:
                 break;
@@ -107,4 +115,7 @@ public class Exercise1Activity extends AppCompatActivity implements View.OnClick
                 break;
         }
     }
+
+
+
 }
