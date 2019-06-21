@@ -17,7 +17,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.93" />
+        app:layout_constraintGuide_percent="0.97" />
 
     <android.support.constraint.Guideline
         android:id="@+id/verticalGuidelineStart"
@@ -33,8 +33,8 @@
         android:orientation="vertical"
         app:layout_constraintGuide_percent="0.93" />
 
-    <FrameLayout
-        android:id="@+id/frameLayout"
+    <com.name.COMP304_Assignment.Exercise1.CanvasView
+        android:id="@+id/canvas"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_marginStart="50dp"
@@ -42,7 +42,6 @@
         android:layout_marginEnd="50dp"
         android:layout_marginBottom="10dp"
         android:background="@android:color/black"
-        android:visibility="gone"
         app:layout_constraintBottom_toBottomOf="@id/horizontalGuidelineBottom"
         app:layout_constraintEnd_toEndOf="@+id/verticalGuidelineEnd"
         app:layout_constraintStart_toStartOf="@+id/verticalGuidelineStart"
@@ -71,7 +70,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.60" />
+        app:layout_constraintGuide_percent="0.55" />
 
     <android.support.constraint.Guideline
         android:id="@+id/horizontalGuidelineTopT"
@@ -81,7 +80,7 @@
         app:layout_constraintGuide_percent="0.03" />
 
     <Spinner
-        android:id="@+id/spinner"
+        android:id="@+id/spinnerLineStroke"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
@@ -90,59 +89,117 @@
         app:layout_constraintEnd_toStartOf="@+id/verticalGuideline1"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="@+id/verticalGuidelineStart"
-        app:layout_constraintTop_toBottomOf="@+id/textView2" />
+        app:layout_constraintTop_toBottomOf="@+id/lblLineStroke" />
 
     <TextView
-        android:id="@+id/textView2"
+        android:id="@+id/lblLineStroke"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="TextView"
+        android:text="@string/lbl_line_stroke"
         app:layout_constraintEnd_toStartOf="@+id/verticalGuideline1"
         app:layout_constraintStart_toStartOf="@+id/verticalGuidelineStart"
         app:layout_constraintTop_toTopOf="@+id/horizontalGuidelineTopT" />
 
     <TextView
-        android:id="@+id/textView4"
+        android:id="@+id/lblSelectColor"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="TextView"
+        android:text="@string/lbl_line_color"
         app:layout_constraintEnd_toStartOf="@+id/verticalGuideline2"
         app:layout_constraintStart_toStartOf="@+id/verticalGuideline1"
         app:layout_constraintTop_toTopOf="@+id/horizontalGuidelineTopT" />
 
     <TextView
-        android:id="@+id/textView5"
+        android:id="@+id/lblDrawLine"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="TextView"
+        android:text="@string/lbl_line_direction"
         app:layout_constraintEnd_toStartOf="@+id/verticalGuidelineEnd"
         app:layout_constraintStart_toStartOf="@+id/verticalGuideline2"
         app:layout_constraintTop_toTopOf="@+id/horizontalGuidelineTopT" />
 
     <Button
-        android:id="@+id/button3"
+        android:id="@+id/btnTop"
         android:layout_width="55dp"
         android:layout_height="50dp"
         android:layout_marginStart="32dp"
         android:layout_marginTop="16dp"
         android:layout_marginEnd="32dp"
-        android:text="^"
+        android:text="T"
         android:textColor="@android:color/black"
         android:textSize="25dp"
         app:layout_constraintEnd_toStartOf="@+id/verticalGuidelineEnd"
         app:layout_constraintStart_toStartOf="@+id/verticalGuideline2"
-        app:layout_constraintTop_toBottomOf="@+id/textView5" />
+        app:layout_constraintTop_toBottomOf="@+id/lblDrawLine" />
 
     <Button
-        android:id="@+id/button4"
+        android:id="@+id/btnLeft"
         android:layout_width="55dp"
         android:layout_height="55dp"
         android:layout_marginTop="8dp"
-        android:text="<"
+        android:text="L"
         android:textColor="@android:color/black"
         android:textSize="25dp"
         app:layout_constraintStart_toStartOf="@+id/verticalGuideline2"
-        app:layout_constraintTop_toBottomOf="@+id/button3" />
+        app:layout_constraintTop_toBottomOf="@+id/btnTop" />
 
+    <Button
+        android:id="@+id/btnRight"
+        android:layout_width="55dp"
+        android:layout_height="55dp"
+        android:layout_marginTop="8dp"
+        android:text="R"
+        android:textColor="@android:color/black"
+        android:textSize="25dp"
+        app:layout_constraintEnd_toStartOf="@+id/verticalGuidelineEnd"
+        app:layout_constraintTop_toBottomOf="@+id/btnTop" />
 
+    <Button
+        android:id="@+id/btnBottom"
+        android:layout_width="55dp"
+        android:layout_height="55dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:text="B"
+        android:textColor="@android:color/black"
+        android:textSize="25dp"
+        app:layout_constraintEnd_toStartOf="@+id/verticalGuidelineEnd"
+        app:layout_constraintStart_toStartOf="@+id/verticalGuideline2"
+        app:layout_constraintTop_toBottomOf="@+id/btnRight"
+        tools:ignore="MissingConstraints" />
+
+    <RadioGroup
+        android:id="@+id/radioGroupColor"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="16dp"
+        app:layout_constraintBottom_toTopOf="@+id/horizontalGuidelineTop"
+        app:layout_constraintEnd_toStartOf="@+id/btnLeft"
+        app:layout_constraintStart_toStartOf="@+id/verticalGuideline1"
+        app:layout_constraintTop_toBottomOf="@+id/lblSelectColor">
+
+        <RadioButton
+            android:id="@+id/radioRed"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checked="true"
+            android:text="@string/radio_red" />
+
+        <RadioButton
+            android:id="@+id/radioGreen"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/radio_green" />
+
+        <RadioButton
+            android:id="@+id/radioPink"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/radio_pink" />
+
+    </RadioGroup>
 </android.support.constraint.ConstraintLayout>

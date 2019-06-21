@@ -1,6 +1,12 @@
 <resources>
-    <string name="app_name">NameCOMP-304-004</string>
+    <string name="app_name">NameCOMP304</string>
     <string name="select_your">Select Your Exercise to Show the Solution</string>
     <string name="stop_animation">Stop Animation</string>
     <string name="start_animation">Start Animation</string>
+    <string name="lbl_line_stroke">Line Stroke</string>
+    <string name="lbl_line_color">Line Color</string>
+    <string name="lbl_line_direction">Line Direction</string>
+    <string name="radio_red">Red</string>
+    <string name="radio_green">Green</string>
+    <string name="radio_pink">Pink</string>
 </resources>

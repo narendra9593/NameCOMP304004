@@ -7,6 +7,7 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.Spinner;
 
+import com.name.COMP304_Assignment.Exercise1.Exercise1Activity;
 import com.name.COMP304_Assignment.Exercise2.Exercise2Activity;
 import com.name.COMP304_Assignment.Exercise3.Exercise3Activity;
 
@@ -35,11 +36,11 @@ public class MainActivity extends AppCompatActivity {
             public void onItemSelected(AdapterView<?> parent, View view, int pos, long id) {
                /* String item = ((TextView)view.findViewById(R.id.offer_type_txt)).getText().toString();
                 selectedOffer.setText(item);*/
-                if(++check > 1) {
+//                if(++check > 1) {
                     Intent intent = null;
                     switch (pos) {
                         case 0:
-                            intent = new Intent(MainActivity.this, Exercise2Activity.class);
+                            intent = new Intent(MainActivity.this, Exercise1Activity.class);
                             break;
                         case 1:
                             intent = new Intent(MainActivity.this, Exercise2Activity.class);
@@ -48,11 +49,11 @@ public class MainActivity extends AppCompatActivity {
                             intent = new Intent(MainActivity.this, Exercise3Activity.class);
                             break;
                         default:
-                            intent = new Intent(MainActivity.this, Exercise2Activity.class);
+                            intent = new Intent(MainActivity.this, Exercise1Activity.class);
                             break;
                     }
                     startActivity(intent);
-                }
+//                }
             }
 
             public void onNothingSelected(AdapterView<?> parent) {

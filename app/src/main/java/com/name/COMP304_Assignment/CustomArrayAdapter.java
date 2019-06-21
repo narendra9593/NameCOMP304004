@@ -18,8 +18,8 @@ public class CustomArrayAdapter extends ArrayAdapter<String> {
     private final List<String> items;
     private final int mResource;
 
-     CustomArrayAdapter(@NonNull Context context, @LayoutRes int resource,
-                              @NonNull List objects) {
+     public CustomArrayAdapter(@NonNull Context context, @LayoutRes int resource,
+                               @NonNull List objects) {
         super(context, resource, 0, objects);
 
         mInflater = LayoutInflater.from(context);
